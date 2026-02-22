@@ -1,0 +1,222 @@
+.wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
+
+.back {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.back:hover {
+  color: var(--accent);
+}
+
+.loading,
+.error {
+  text-align: center;
+  color: var(--text-muted);
+  padding: 3rem;
+}
+
+.error {
+  color: var(--danger);
+}
+
+.header {
+  margin-bottom: 2rem;
+}
+
+.type,
+.source {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  margin-right: 0.75rem;
+}
+
+.title {
+  margin: 0.5rem 0 0.75rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.currentPrice {
+  margin: 0;
+  font-size: 1.1rem;
+  color: var(--text-muted);
+}
+
+.currentPrice strong {
+  color: var(--accent);
+}
+
+.cards {
+  display: grid;
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+  animation: fadeIn 0.4s ease-out both;
+}
+
+.card:nth-child(1) { animation-delay: 0.05s; }
+.card:nth-child(2) { animation-delay: 0.1s; }
+.card:nth-child(3) { animation-delay: 0.15s; }
+.card:nth-child(4) { animation-delay: 0.2s; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.cardTitle {
+  margin: 0 0 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.range {
+  font-family: var(--font-mono);
+  font-size: 1.25rem;
+}
+
+.rangeVal {
+  color: var(--accent);
+}
+
+.rangeSep {
+  color: var(--text-muted);
+  margin: 0 0.25rem;
+}
+
+.rangeUnknown {
+  color: var(--text-muted);
+}
+
+.surgeWrap,
+.confWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.surgeBar,
+.confBar {
+  height: 8px;
+  background: var(--bg);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.surgeFill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--success), var(--warning), var(--danger));
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.confFill {
+  height: 100%;
+  background: var(--accent);
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.surgeLabel,
+.confLabel {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.recWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.recBuy {
+  color: var(--success);
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.recWait {
+  color: var(--warning);
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.recNeutral {
+  color: var(--text-muted);
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.bestTime {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.insight {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.insightTitle {
+  margin: 0 0 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.insightText {
+  margin: 0;
+  line-height: 1.55;
+  color: var(--text);
+}
+
+.reasons {
+  padding: 1rem 0;
+}
+
+.reasonsTitle {
+  margin: 0 0 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.reasonsList {
+  margin: 0;
+  padding-left: 1.25rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.reasonsList li {
+  margin-bottom: 0.25rem;
+}
