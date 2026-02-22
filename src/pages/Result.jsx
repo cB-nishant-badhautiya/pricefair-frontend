@@ -1,9 +1,8 @@
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { Layout } from "../components/Layout";
+import { API } from "../config";
 import styles from "./Result.module.css";
-
-const API = "/api";
 
 export function Result() {
   const { id } = useParams();

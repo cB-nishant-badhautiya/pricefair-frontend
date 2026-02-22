@@ -4,9 +4,9 @@ import { CheckForm } from "../components/CheckForm";
 import { HistoryList } from "../components/HistoryList";
 import { Layout } from "../components/Layout";
 import { useNotification } from "../context/NotificationContext";
+import { API } from "../config";
 import styles from "./Dashboard.module.css";
 
-const API = "/api";
 const PAGE_SIZE = 8;
 
 export function Dashboard() {
