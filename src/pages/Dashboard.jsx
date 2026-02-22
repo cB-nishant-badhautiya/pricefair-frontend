@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { CheckForm } from "../components/CheckForm";
 import { HistoryList } from "../components/HistoryList";
 import { Layout } from "../components/Layout";
+import { useNotification } from "../context/NotificationContext";
 import styles from "./Dashboard.module.css";
 
 const API = "/api";
@@ -10,6 +11,7 @@ const PAGE_SIZE = 8;
 
 export function Dashboard() {
   const navigate = useNavigate();
+  const { success: toastSuccess, error: toastError } = useNotification();
   const [historyData, setHistoryData] = useState({ items: [], total: 0, page: 1, totalPages: 1 });
   const [loading, setLoading] = useState(false);
   const [historyLoading, setHistoryLoading] = useState(true);
@@ -58,18 +60,25 @@ export function Dashboard() {
       });
       const data = await res.json();
       if (!res.ok) {
-        setError(data.error || "Analysis failed");
+        const message = data.error || "Analysis failed";
+        setError(message);
+        toastError(message);
         return;
       }
       if (data.id) {
+        toastSuccess("Price check saved. Viewing result.");
         navigate(`/result/${data.id}`);
         setPage(1);
         loadHistory();
         return;
       }
-      setError("No result ID returned");
+      const fallback = "No result ID returned";
+      setError(fallback);
+      toastError(fallback);
     } catch (e) {
-      setError(e.message || "Request failed");
+      const message = e.message || "Request failed";
+      setError(message);
+      toastError(message);
     } finally {
       setLoading(false);
     }
